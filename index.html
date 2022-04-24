@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Minesweeper</title>
+        <link rel="stylesheet" href="minesweeper.css">
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        
+    </head>
+    <body>
+        <button id="easy-button">Easy</button>
+        <br><br>
+        <button id="hard-button">Hard</button>
+        <br><br>
+        <div>Mines Count = <span id="mines-count">0</span></div>
+        <br>
+        <div>Time = <span id="timer">0</span>s</div>
+        <div id="board"></div>
+        <br><br>
+        <h3>Fastest Times for 8x8</h3>
+        <ul id="high-scores"></ul>
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyDI-aSy0UNnCG9aPjsKYXY3MWyIrz4QsNE",
+                authDomain: "minesweeper-assgn.firebaseapp.com",
+                databaseURL: "https://minesweeper-assgn-default-rtdb.firebaseio.com",
+                projectId: "minesweeper-assgn",
+                storageBucket: "minesweeper-assgn.appspot.com",
+                messagingSenderId: "757878023047",
+                appId: "1:757878023047:web:cce4f76801b13a04f06922",
+                measurementId: "G-47E8QVZF44"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+        </script>
+        <script src="minesweeper.js"></script>
+    </body>
+</html>
